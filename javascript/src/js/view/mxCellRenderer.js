@@ -437,6 +437,7 @@ mxCellRenderer.prototype.createLabel = function(state, value)
 		state.text.opacity = mxUtils.getValue(state.style, mxConstants.STYLE_TEXT_OPACITY, 100);
 		state.text.dialect = (isForceHtml) ? mxConstants.DIALECT_STRICTHTML : state.view.graph.dialect;
 		state.text.style = state.style;
+    state.text.style["whiteSpace"] = "wrap"
 		state.text.state = state;
 		this.initializeLabel(state, state.text);
 		

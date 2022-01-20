@@ -3769,7 +3769,7 @@ var mxUtils =
 		div.style.visibility = 'hidden';
 		div.style.display = (mxClient.IS_QUIRKS) ? 'inline' : 'inline-block';
 		div.style.zoom = '1';
-		
+	  textWidth = 170	
 		if (textWidth != null)
 		{
 			div.style.width = textWidth + 'px';

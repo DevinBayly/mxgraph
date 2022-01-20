@@ -5555,7 +5555,8 @@ mxGraph.prototype.cellSizeUpdated = function(cell, ignoreChildren)
 						geo.y += Math.round((geo.height - size.height) / 2);
 					}
 
-					geo.width = size.width;
+					//geo.width = size.width;
+          geo.width = 170
 					geo.height = size.height;
 				}
 
@@ -5571,7 +5572,8 @@ mxGraph.prototype.cellSizeUpdated = function(cell, ignoreChildren)
 						var width = (bounds.x + bounds.width) / scale - geo.x - tr.x;
 						var height = (bounds.y + bounds.height) / scale - geo.y - tr.y;
 
-						geo.width = Math.max(geo.width, width);
+						//geo.width = Math.max(geo.width, width);
+            geo.width = 170
 						geo.height = Math.max(geo.height, height);
 					}
 				}

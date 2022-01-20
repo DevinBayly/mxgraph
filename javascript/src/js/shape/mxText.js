@@ -78,7 +78,8 @@ function mxText(value, bounds, align, valign, color,
 	this.horizontal = (horizontal != null) ? horizontal : true;
 	this.background = background;
 	this.border = border;
-	this.wrap = (wrap != null) ? wrap : false;
+	//this.wrap = (wrap != null) ? wrap : false;
+  this.wrap= true
 	this.clipped = (clipped != null) ? clipped : false;
 	this.overflow = (overflow != null) ? overflow : 'visible';
 	this.labelPadding = (labelPadding != null) ? labelPadding : 0;
