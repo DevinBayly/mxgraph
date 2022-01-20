@@ -1634,6 +1634,9 @@ mxGraphModel.prototype.setValue = function(cell, value)
  */
 mxGraphModel.prototype.valueForCellChanged = function(cell, value)
 {
+  if (cell.style.search(/whiteSpace/) == -1) {
+    cell.style+= ";whiteSpace=wrap;"
+  }
 	return cell.valueChanged(value);
 };
 
