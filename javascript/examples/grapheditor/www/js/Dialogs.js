@@ -1225,6 +1225,7 @@ ExportDialog.exportFile = function(editorUi, name, format, bg, s, b, dpi)
 		if (param.length <= MAX_REQUEST_SIZE && w * h < MAX_AREA)
 		{
 			editorUi.hideDialog();
+			
 			var req = new mxXmlRequest(EXPORT_URL, 'format=' + format +
 				'&filename=' + encodeURIComponent(name) +
 				'&bg=' + ((bg != null) ? bg : 'none') +
@@ -1250,9 +1251,13 @@ ExportDialog.saveLocalFile = function(editorUi, data, filename, format)
 	if (data.length < MAX_REQUEST_SIZE)
 	{
 		editorUi.hideDialog();
-		var req = new mxXmlRequest(SAVE_URL, 'xml=' + encodeURIComponent(data) + '&filename=' +
-			encodeURIComponent(filename) + '&format=' + format);
-		req.simulate(document, '_blank');
+		let a = document.createElement("a")
+		a.href = URL.createObjectURL(new Blob([data]))
+		a.download = filename
+		a.click()
+// 		var req = new mxXmlRequest(SAVE_URL, 'xml=' + encodeURIComponent(data) + '&filename=' +
+// 			encodeURIComponent(filename) + '&format=' + format);
+// 		req.simulate(document, '_blank');
 	}
 	else
 	{
