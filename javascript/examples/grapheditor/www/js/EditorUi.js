@@ -4167,7 +4167,7 @@ EditorUi.prototype.pickColor = function(color, apply)
 EditorUi.prototype.openFile = function()
 {
 	// Closes dialog after open
-	editor.useLocalStorage = true
+	Editor.useLocalStorage = true
 	window.openFile = new OpenFile(mxUtils.bind(this, function(cancel)
 	{
 		this.hideDialog(cancel);
