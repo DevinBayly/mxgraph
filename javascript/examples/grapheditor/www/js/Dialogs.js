@@ -1250,6 +1250,10 @@ ExportDialog.saveLocalFile = function(editorUi, data, filename, format)
 	if (data.length < MAX_REQUEST_SIZE)
 	{
 		editorUi.hideDialog();
+		let a = document.createElement("a")
+		a.href = URL.createObjectURL(new Blob([data]))
+		a.download = filename
+		a.click()
 		var req = new mxXmlRequest(SAVE_URL, 'xml=' + encodeURIComponent(data) + '&filename=' +
 			encodeURIComponent(filename) + '&format=' + format);
 		req.simulate(document, '_blank');
