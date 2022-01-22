@@ -4167,6 +4167,7 @@ EditorUi.prototype.pickColor = function(color, apply)
 EditorUi.prototype.openFile = function()
 {
 	// Closes dialog after open
+	editor.useLocalStorage = true
 	window.openFile = new OpenFile(mxUtils.bind(this, function(cancel)
 	{
 		this.hideDialog(cancel);
@@ -4316,6 +4317,11 @@ EditorUi.prototype.save = function(name)
 		
 		try
 		{
+			Editor.useLocalStorage =true
+			let a = document.createElement("a")
+			a.href = URL.createObjectURL(new Blob([xml]))
+			a.download = name
+			a.click()
 			if (Editor.useLocalStorage)
 			{
 				if (localStorage.getItem(name) != null &&
